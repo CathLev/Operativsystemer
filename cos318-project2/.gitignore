@@ -1,0 +1,12 @@
+*.o
+*~
+.depend
+bootblock
+createimage
+floppy.img
+hello
+image
+kernel
+process1
+process2
+process3

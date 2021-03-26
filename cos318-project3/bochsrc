@@ -1,0 +1,11 @@
+megs: 32
+romimage: file=/u/318/bin/BIOS-bochs-plugins
+vgaromimage: file=/u/318/bin/VGABIOS-lgpl-latest
+vga: extension=vbe
+floppya: 1_44=image, status=inserted
+boot: a
+log: /dev/null
+mouse: enabled=0
+cpu: count=1, ips=2000000, reset_on_triple_fault=1
+display_library: x
+magic_break: enabled=1

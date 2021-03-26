@@ -1,0 +1,4709 @@
+......Starting my tests
+
+
+*****Make File System Test*****
+
+ShellShock Version 0.000003
+
+# # # # # Name                             Type Inode Size
+.                                D    0     170
+..                               D    0     170
+f1                               F    1     10
+f2                               F    2     10
+f3                               F    3     10
+# # Name                             Type Inode Size
+.                                D    0     68
+..                               D    0     68
+# Goodbye
+
+***************
+*****Simple Errors Test*****
+ShellShock Version 0.000003
+
+# # Problem with removing directory
+# Problem with changing directory
+# Problem with link
+# Problem with unlink
+# Goodbye
+
+***************
+*****Open Test*****
+ShellShock Version 0.000003
+
+# # # File handle is : 0
+# Data read in : AB
+# Done
+# Error while writing file
+# ABCDEFGHIJ
+# Goodbye
+
+***************
+*****Lseek Test*****
+ShellShock Version 0.000003
+
+# # File handle is : 0
+# Done
+# OK
+# Data read in : 318
+# Data read in : rules
+# OK
+# cos318rules
+# Goodbye
+
+***************
+*****Make Directory Test*****
+
+
+
+
+
+
+
+
+
+
+
+ShellShock Version 0.000003
+
+# # OK
+# OK
+# # OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# # OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# # OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# # OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# # OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# OK
+# Name                             Type Inode Size
+.                                D    0     408
+..                               D    0     408
+d0                               D    1     102
+d1                               D    3     102
+d2                               D    5     170
+d3                               D    9     170
+d4                               D    13     238
+d5                               D    19     238
+d6                               D    25     306
+d7                               D    33     306
+d8                               D    41     374
+d9                               D    51     374
+# OK
+# Name                             Type Inode Size
+.                                D    1     102
+..                               D    0     408
+f0                               F    2     10
+# OK
+# OK
+# Name                             Type Inode Size
+.                                D    3     102
+..                               D    0     408
+sd10                             D    4     68
+# OK
+# OK
+# Name                             Type Inode Size
+.                                D    5     170
+..                               D    0     408
+sd20                             D    6     68
+sd21                             D    7     68
+f2                               F    8     10
+# OK
+# OK
+# Name                             Type Inode Size
+.                                D    9     170
+..                               D    0     408
+sd30                             D    10     68
+sd31                             D    11     68
+sd32                             D    12     68
+# OK
+# OK
+# Name                             Type Inode Size
+.                                D    13     238
+..                               D    0     408
+sd40                             D    14     68
+sd41                             D    15     68
+sd42                             D    16     68
+sd43                             D    17     68
+f4                               F    18     10
+# OK
+# OK
+# Name                             Type Inode Size
+.                                D    19     238
+..                               D    0     408
+sd50                             D    20     68
+sd51                             D    21     68
+sd52                             D    22     68
+sd53                             D    23     68
+sd54                             D    24     68
+# OK
+# OK
+# Name                             Type Inode Size
+.                                D    25     306
+..                               D    0     408
+sd60                             D    26     68
+sd61                             D    27     68
+sd62                             D    28     68
+sd63                             D    29     68
+sd64                             D    30     68
+sd65                             D    31     68
+f6                               F    32     10
+# OK
+# OK
+# Name                             Type Inode Size
+.                                D    33     306
+..                               D    0     408
+sd70                             D    34     68
+sd71                             D    35     68
+sd72                             D    36     68
+sd73                             D    37     68
+sd74                             D    38     68
+sd75                             D    39     68
+sd76                             D    40     68
+# OK
+# OK
+# Name                             Type Inode Size
+.                                D    41     374
+..                               D    0     408
+sd80                             D    42     68
+sd81                             D    43     68
+sd82                             D    44     68
+sd83                             D    45     68
+sd84                             D    46     68
+sd85                             D    47     68
+sd86                             D    48     68
+sd87                             D    49     68
+f8                               F    50     10
+# OK
+# OK
+# Name                             Type Inode Size
+.                                D    51     374
+..                               D    0     408
+sd90                             D    52     68
+sd91                             D    53     68
+sd92                             D    54     68
+sd93                             D    55     68
+sd94                             D    56     68
+sd95                             D    57     68
+sd96                             D    58     68
+sd97                             D    59     68
+sd98                             D    60     68
+# OK
+# Goodbye
+
+***************
+*****Link Test*****
+
+ShellShock Version 0.000003
+
+# # # # # # # # # # # # Name                             Type Inode Size
+.                                D    0     408
+..                               D    0     408
+target                           F    1     10
+f0                               F    1     10
+f1                               F    1     10
+f2                               F    1     10
+f3                               F    1     10
+f4                               F    1     10
+f5                               F    1     10
+f6                               F    1     10
+f7                               F    1     10
+f8                               F    1     10
+#     Inode No         : 1
+    Type             : FILE
+    Link Count       : 10
+    Size             : 10
+    Blocks allocated : 1
+# Goodbye
+
+***************
+*****Unlink Test*****
+
+ShellShock Version 0.000003
+
+# # # # # # # # # # # # # # # # # # # # # Name                             Type Inode Size
+.                                D    0     102
+..                               D    0     102
+target                           F    1     10
+#     Inode No         : 1
+    Type             : FILE
+    Link Count       : 1
+    Size             : 10
+    Blocks allocated : 1
+# Goodbye
+
+***************
+*****Multiple Open File Descriptors Test*****
+ShellShock Version 0.000003
+
+# # File handle is : 0
+# File handle is : 1
+# File handle is : 2
+# Done
+# Data read in : hello
+# Done
+# Data read in : world
+# OK
+# Data read in : there
+# Goodbye
+
+***************
+*****Get All Handles Test*****
+***************
+ShellShock Version 0.000003
+
+# # OK
+# OK
+# OK
+# OK
+# File handle is : 0
+# File handle is : 1
+# File handle is : 2
+# File handle is : 3
+# File handle is : 4
+# File handle is : 5
+# File handle is : 6
+# File handle is : 7
+# File handle is : 8
+# File handle is : 9
+# File handle is : 10
+# File handle is : 11
+# File handle is : 12
+# File handle is : 13
+# File handle is : 14
+# File handle is : 15
+# File handle is : 16
+# File handle is : 17
+# File handle is : 18
+# File handle is : 19
+# File handle is : 20
+# File handle is : 21
+# File handle is : 22
+# File handle is : 23
+# File handle is : 24
+# File handle is : 25
+# File handle is : 26
+# File handle is : 27
+# File handle is : 28
+# File handle is : 29
+# File handle is : 30
+# File handle is : 31
+# File handle is : 32
+# File handle is : 33
+# File handle is : 34
+# File handle is : 35
+# File handle is : 36
+# File handle is : 37
+# File handle is : 38
+# File handle is : 39
+# File handle is : 40
+# File handle is : 41
+# File handle is : 42
+# File handle is : 43
+# File handle is : 44
+# File handle is : 45
+# File handle is : 46
+# File handle is : 47
+# File handle is : 48
+# File handle is : 49
+# File handle is : 50
+# File handle is : 51
+# File handle is : 52
+# File handle is : 53
+# File handle is : 54
+# File handle is : 55
+# File handle is : 56
+# File handle is : 57
+# File handle is : 58
+# File handle is : 59
+# File handle is : 60
+# File handle is : 61
+# File handle is : 62
+# File handle is : 63
+# File handle is : 64
+# File handle is : 65
+# File handle is : 66
+# File handle is : 67
+# File handle is : 68
+# File handle is : 69
+# File handle is : 70
+# File handle is : 71
+# File handle is : 72
+# File handle is : 73
+# File handle is : 74
+# File handle is : 75
+# File handle is : 76
+# File handle is : 77
+# File handle is : 78
+# File handle is : 79
+# File handle is : 80
+# File handle is : 81
+# File handle is : 82
+# File handle is : 83
+# File handle is : 84
+# File handle is : 85
+# File handle is : 86
+# File handle is : 87
+# File handle is : 88
+# File handle is : 89
+# File handle is : 90
+# File handle is : 91
+# File handle is : 92
+# File handle is : 93
+# File handle is : 94
+# File handle is : 95
+# File handle is : 96
+# File handle is : 97
+# File handle is : 98
+# File handle is : 99
+# OK
+# OK
+# File handle is : 100
+# File handle is : 101
+# File handle is : 102
+# File handle is : 103
+# File handle is : 104
+# File handle is : 105
+# File handle is : 106
+# File handle is : 107
+# File handle is : 108
+# File handle is : 109
+# File handle is : 110
+# File handle is : 111
+# File handle is : 112
+# File handle is : 113
+# File handle is : 114
+# File handle is : 115
+# File handle is : 116
+# File handle is : 117
+# File handle is : 118
+# File handle is : 119
+# File handle is : 120
+# File handle is : 121
+# File handle is : 122
+# File handle is : 123
+# File handle is : 124
+# File handle is : 125
+# File handle is : 126
+# File handle is : 127
+# File handle is : 128
+# File handle is : 129
+# File handle is : 130
+# File handle is : 131
+# File handle is : 132
+# File handle is : 133
+# File handle is : 134
+# File handle is : 135
+# File handle is : 136
+# File handle is : 137
+# File handle is : 138
+# File handle is : 139
+# File handle is : 140
+# File handle is : 141
+# File handle is : 142
+# File handle is : 143
+# File handle is : 144
+# File handle is : 145
+# File handle is : 146
+# File handle is : 147
+# File handle is : 148
+# File handle is : 149
+# File handle is : 150
+# File handle is : 151
+# File handle is : 152
+# File handle is : 153
+# File handle is : 154
+# File handle is : 155
+# File handle is : 156
+# File handle is : 157
+# File handle is : 158
+# File handle is : 159
+# File handle is : 160
+# File handle is : 161
+# File handle is : 162
+# File handle is : 163
+# File handle is : 164
+# File handle is : 165
+# File handle is : 166
+# File handle is : 167
+# File handle is : 168
+# File handle is : 169
+# File handle is : 170
+# File handle is : 171
+# File handle is : 172
+# File handle is : 173
+# File handle is : 174
+# File handle is : 175
+# File handle is : 176
+# File handle is : 177
+# File handle is : 178
+# File handle is : 179
+# File handle is : 180
+# File handle is : 181
+# File handle is : 182
+# File handle is : 183
+# File handle is : 184
+# File handle is : 185
+# File handle is : 186
+# File handle is : 187
+# File handle is : 188
+# File handle is : 189
+# File handle is : 190
+# File handle is : 191
+# File handle is : 192
+# File handle is : 193
+# File handle is : 194
+# File handle is : 195
+# File handle is : 196
+# File handle is : 197
+# File handle is : 198
+# File handle is : 199
+# OK
+# OK
+# File handle is : 200
+# File handle is : 201
+# File handle is : 202
+# File handle is : 203
+# File handle is : 204
+# File handle is : 205
+# File handle is : 206
+# File handle is : 207
+# File handle is : 208
+# File handle is : 209
+# File handle is : 210
+# File handle is : 211
+# File handle is : 212
+# File handle is : 213
+# File handle is : 214
+# File handle is : 215
+# File handle is : 216
+# File handle is : 217
+# File handle is : 218
+# File handle is : 219
+# File handle is : 220
+# File handle is : 221
+# File handle is : 222
+# File handle is : 223
+# File handle is : 224
+# File handle is : 225
+# File handle is : 226
+# File handle is : 227
+# File handle is : 228
+# File handle is : 229
+# File handle is : 230
+# File handle is : 231
+# File handle is : 232
+# File handle is : 233
+# File handle is : 234
+# File handle is : 235
+# File handle is : 236
+# File handle is : 237
+# File handle is : 238
+# File handle is : 239
+# File handle is : 240
+# File handle is : 241
+# File handle is : 242
+# File handle is : 243
+# File handle is : 244
+# File handle is : 245
+# File handle is : 246
+# File handle is : 247
+# File handle is : 248
+# File handle is : 249
+# File handle is : 250
+# File handle is : 251
+# File handle is : 252
+# File handle is : 253
+# File handle is : 254
+# File handle is : 255
+# Error while opening file
+# Error while opening file
+# Error while opening file
+# Error while opening file
+# Goodbye
+
+*****Get All Inodes Test*****
+ShellShock Version 0.000003
+
+# # File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# OK
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# OK
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# OK
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# OK
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# OK
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# OK
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# OK
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# OK
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# OK
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# OK
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# OK
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# OK
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# OK
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# OK
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# OK
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# OK
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# OK
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# OK
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# OK
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# OK
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# File handle is : 0
+# OK
+# Error while opening file
+# OK
+# Error while opening file
+# OK
+# Error while opening file
+# OK
+# Goodbye
+
+***************
+*****All Blocks Test*****
+ShellShock Version 0.000003
+
+# # OK
+# OK
+# OK
+# OK
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # OK
+# OK
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # OK
+# OK
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Error creating file# Goodbye
+
+***************
+Size is fine

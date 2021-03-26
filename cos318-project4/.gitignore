@@ -1,0 +1,15 @@
+floppy.img
+image
+createimage
+bootblock
+kernel
+process1
+process2
+process3
+*.o
+.depend
+serial.out
+log.out
+bochsout.txt
+*.o
+*~
