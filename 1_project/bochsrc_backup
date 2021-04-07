@@ -1,6 +1,6 @@
 megs: 32
-romimage: file=/usr/share/bochs/BIOS-bochs-latest
-vgaromimage: file=/usr/share/bochs/VGABIOS-lgpl-latest
+romimage:    file=/home/jh/Documents/Operativsystemer/tools/bochs/Seabios.bin
+vgaromimage: file=/home/jh/Documents/Operativsystemer/tools/bochs/VGABIOS-lgpl-latest
 vga: extension=vbe
 floppya: 1_44=image, status=inserted
 boot: a

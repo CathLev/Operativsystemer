@@ -24,7 +24,9 @@
 #
 
 _start:
-	mov $0x71,%al
+	# mov $'J',%al
+	# call print_char
+	mov $'H',%al
 	call print_char
 
 # Area reserved for createimage to write the OS size
@@ -45,10 +47,10 @@ switch_to_kernel:
 # print a character to screen at the position of the cursor. TODO: advance the cursor
 print_char:
 	push %ebx
-	mov $0x0e,%ah #specify teletype
-	mov $0x00,%bh #page number
-	mov $0x02,%bl #color of foreground (white)
-	int $0x10 #call interrupt
+	mov $0x0e,%ah # specify teletype
+	mov $0x00,%bh # page number
+	mov $0x02,%bl # color of foreground (white)
+	int $0x10 # call interrupt
 	pop %ebx
 
 print_string:
