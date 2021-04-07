@@ -24,7 +24,7 @@
 #
 
 _start:
-	mov $0x71,%al
+	mov $0x60,%al
 	call print_char
 
 # Area reserved for createimage to write the OS size
