@@ -24,7 +24,7 @@ KERNEL_ADDR	= 0x1000
 #
 #-Wall:			All of the `-W' options combined (all warnings on)
 
-CCOPTS = -Wall -g -m32 -c -fomit-frame-pointer -O2 -fno-builtin
+CCOPTS = -Wall -g -march=i386 -m32 -c -fomit-frame-pointer -O2 -fno-builtin
 
 # Linker flags
 #-nostartfiles:	Do not use the standard system startup files when linking.
@@ -38,7 +38,7 @@ LDOPTS = -nostartfiles -nostdlib -melf_i386
 
 # Makefile targets
 
-all: bootblock createimage kernel image
+all: bootblock createimage kernel image 
 
 kernel: kernel.o
 	$(LD) $(LDOPTS) -Ttext $(KERNEL_ADDR) -o kernel $<
@@ -50,8 +50,8 @@ createimage: createimage.o
 	$(CC) -o createimage $<
 
 # Create an image to put on the floppy
-image: bootblock createimage kernel
-	./createimage.given --extended ./bootblock ./kernel
+image: bootblock kernel
+	./createimage.given --extended ./bootblock ./kernel 
 
 # Put the image on the usb stick (these two stages are independent, as both
 # vmware and bochs can run using only the image file stored on the harddisk)	
