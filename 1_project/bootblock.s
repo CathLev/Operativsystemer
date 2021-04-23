@@ -9,7 +9,6 @@
 # utility constants
 .equ  KERNEL_DISK_SECTOR,0x02 # the kernel is located in the second sector
 .equ DISK_NUMBER, 0x80 # hard drive number 1
-.equ KERNEL_SIZE, 0x09 # kernel is currently 9 sectors
 
 .text               #Code segment
 .globl    _start    #The entry point must be global
@@ -29,8 +28,15 @@ load_kernel:
 	# Set up the INT 0x13 call to read disk
 	mov $DISK_NUMBER, %dl 	# The disk to read
 	mov $0, %dh 						# head number ?
-	mov $KERNEL_SIZE, %al 	# number of sectors to read from hard disk. hardcoded
-	# mov $os_size, %al 		# trying to use os_size
+
+	# Now we read the kernel size from createimage placed at relative adress 0x02
+	mov $BOOT_SEGMENT, %bx
+	imul $16, %bx
+	add $os_size, %bx
+	add $2, %bx
+	mov (%bx), %al 
+	
+	# moving on
 	mov $0, %ch 						# cylinder nr ?
 	mov $KERNEL_DISK_SECTOR, %cl # The sector to start looking in
 	mov $0, %bx
