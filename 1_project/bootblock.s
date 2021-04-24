@@ -2,8 +2,8 @@
 
 # memory constants
 .equ BOOT_ADDRESS,0x7c00
-.equ NEW_BOOT_SEGMENT, 0x0000
-.equ NEW_BOOT_ADDRESS, 0x7e00
+.equ NEW_BOOT_SEGMENT, 0x7e0
+.equ NEW_BOOT_ADDRESS, 0x0000
 .equ KERNEL_ADDRESS, 0x1000
 .equ STACK_SEGMENT, 0x9000
 .equ STACK_INITIAL_OFFSET, 0xf000
@@ -48,7 +48,17 @@ move_bootloader:
 	int $0x13
 	jc disk_error
 	popa
+
 	xchgw %bx, %bx
+	
+	# transfer control to new bootloader
+	mov $NEW_BOOT_SEGMENT, %ax
+	imul $0x10, %ax
+	add $NEW_BOOT_ADDRESS, %ax
+	add $load_kernel, %ax
+	jmp *%ax
+
+
 
 # setup registers for kernel data and disk read
 load_kernel:
