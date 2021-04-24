@@ -1,19 +1,21 @@
 # Author(s): JH
 
 # memory constants
-.equ  BOOT_SEGMENT,0x7c0
-.equ KERNEL_SEGMENT, 0x1000
+.equ BOOT_ADDRESS,0x7c00
+.equ NEW_BOOT_SEGMENT, 0x0000
+.equ NEW_BOOT_ADDRESS, 0x7e00
+.equ KERNEL_ADDRESS, 0x1000
 .equ STACK_SEGMENT, 0x9000
-.equ STACK_INITIAL_OFFSET, 0xfff0
+.equ STACK_INITIAL_OFFSET, 0xf000
 
 # utility constants
-.equ  KERNEL_DISK_SECTOR,0x02 # the kernel is located in the second sector
+.equ BOOTLOADER_DISK_SECTOR, 0x01 # bootloader is in first sector
+.equ KERNEL_DISK_SECTOR,0x02 # the kernel is located in the second sector
 .equ DISK_NUMBER, 0x80 # hard drive number 1
-.equ KERNEL_SIZE, 0x09 # kernel is currently 9 sectors
 
-.text               #Code segment
-.globl    _start    #The entry point must be global
-.code16             #Real mode
+.text               # Code segment
+.globl    _start    # The entry point must be global
+.code16             # Real mode
 
 _start:
 
@@ -22,20 +24,51 @@ os_size:
 	.word   0
 	.word 	0
 
+
 # setup registers for kernel data and disk read
-load_kernel:
+move_bootloader:
 	xchgw %bx, %bx
 
 	# Set up the INT 0x13 call to read disk
 	mov $DISK_NUMBER, %dl 	# The disk to read
 	mov $0, %dh 						# head number ?
-	mov $KERNEL_SIZE, %al 	# number of sectors to read from hard disk. hardcoded
-	# mov $os_size, %al 		# trying to use os_size
+
+	# Bootloader is 1 sector
+	mov $1, %al 
+	
+	# moving on
+	mov $0, %ch 						# cylinder nr ?
+	mov $BOOTLOADER_DISK_SECTOR, %cl # The sector to start looking in
+	mov $NEW_BOOT_SEGMENT, %bx
+	mov %bx,  %es 					# segment
+	mov $NEW_BOOT_ADDRESS, %bx # memory location of kernel
+	mov $0x02, %ah # tell INT 0x13 to read disk
+
+	pusha
+	int $0x13
+	jc disk_error
+	popa
+	xchgw %bx, %bx
+
+# setup registers for kernel data and disk read
+load_kernel:
+
+	# Set up the INT 0x13 call to read disk
+	mov $DISK_NUMBER, %dl 	# The disk to read
+	mov $0, %dh 						# head number ?
+
+	# Now we read the kernel size from createimage placed at relative adress 0x02
+	mov $BOOT_ADDRESS, %bx
+	add $os_size, %bx
+	add $2, %bx
+	mov (%bx), %al 
+	
+	# moving on
 	mov $0, %ch 						# cylinder nr ?
 	mov $KERNEL_DISK_SECTOR, %cl # The sector to start looking in
 	mov $0, %bx
 	mov %bx,  %es 					# sector ?
-	mov $KERNEL_SEGMENT, %bx # memory location of kernel
+	mov $KERNEL_ADDRESS, %bx # memory location of kernel
 	mov $0x02, %ah # tell INT 0x13 to read disk
 
 	int $0x13
@@ -57,7 +90,7 @@ switch_to_kernel:
 	# mov %ax, %cs # set these to 0 for the kernel, are already 0
 	# mov %ax, %ds
 	# mov %ax, %ds # move data segment together with stack segment
-	mov $KERNEL_SEGMENT, %ax
+	mov $KERNEL_ADDRESS, %ax
 	# movw    %ax, %es
 	# movw    %ax, %fs
 	# movw    %ax, %gs
@@ -69,7 +102,7 @@ disk_error:
 
 	ret
 
-# print a character to screen at the position of the cursor. TODO: advance the cursor
+# print a character to screen at the position of the cursor.
 print_char:
 	pushw %bp
 	movw %sp, %bp

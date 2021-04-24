@@ -1,0 +1,8 @@
+bochsi-2016 -q -f ~/.bochsrc_debug
+
+Object dumping, aka disassembly (-D flag):
+objdump -D -Mi8086 [file here] | less
+
+This one is for hexdumping:
+xxd [file], use -l for length and -s for skip bytes
+hd [file here]
