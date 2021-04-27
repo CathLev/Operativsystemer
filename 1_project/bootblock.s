@@ -2,7 +2,7 @@
 
 # memory constants
 .equ BOOT_ADDRESS,0x7c00
-.equ NEW_BOOT_SEGMENT, 0x7e0
+.equ NEW_BOOT_SEGMENT, 0xf00
 .equ NEW_BOOT_ADDRESS, 0x0000
 .equ KERNEL_ADDRESS, 0x1000
 .equ STACK_SEGMENT, 0x9000
@@ -57,6 +57,7 @@ move_bootloader:
 	add $NEW_BOOT_ADDRESS, %ax
 	add $load_kernel, %ax
 	jmp *%ax
+	# ljmp $NEW_BOOT_SEGMENT, $load_kernel
 
 
 
