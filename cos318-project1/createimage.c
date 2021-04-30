@@ -19,7 +19,7 @@
 #define ELF_32_EHDR_SIZE 52
 #define SECTOR_SIZE 512       /* floppy sector size in bytes */
 #define BOOTLOADER_SIG_OFFSET 0x1fe /* offset for boot loader signature */
-#define KERNEL_SECTOR_OFFSET 0x0 /* offset for recording of kernel sectors */
+#define KERNEL_SECTOR_OFFSET 0x02 /* offset for recording of kernel sectors */
 // more defines...
 
 /* Reads in an executable file in ELF format and returns the program header*/

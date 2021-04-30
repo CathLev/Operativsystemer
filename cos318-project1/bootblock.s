@@ -27,6 +27,7 @@
 #
 
 _start:
+jmp load_kernel
 
 # Area reserved for createimage to write the OS size
 os_size:
@@ -56,7 +57,7 @@ load_kernel:
 	mov $0x00, %ch # Starting cylinder number
 	mov $0x02, %cl # Starting sector number
 	mov $0x00, %dh # Starting head number
-	# movw $0x02, %dl # Drive number (initial %dl)
+	# movw $0x80, %dl # Drive number (initial %dl)
 
 	int $0x13 # Call function
 
@@ -143,18 +144,5 @@ print_string:
 	ret
 
 
-# print a character to screen at the position of the cursor. TODO: advance the cursor
-clear_screen:
 
-    pushw %bp
-    movw %sp, %bp
-
-	mov $0x0000, %ax
-	int $0x10
-
-	movw %bp, %sp
-	popw %bp
-
-
-	ret
 	
