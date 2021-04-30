@@ -32,11 +32,6 @@ result:
 # (with underscore).
 #
 _start:
-
-
-	 xchgw %bx, %bx
-
-	 xchgw %bx, %bx
   pushw  %bp		# Setup stack frame
   movw  %sp,%bp
   
@@ -44,11 +39,6 @@ _start:
   call  displayString	# Print messages
   pushw  $kernel
   call  displayString
-
-
-	 xchgw %bx, %bx
-
-	 xchgw %bx, %bx
   pushw  $testing
   call  displayString
   pushw  $1000

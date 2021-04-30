@@ -10,16 +10,11 @@
 .equ  BOOT_SEGMENT,0x7c0
 .equ KERNEL_SEGMENT_ADDR,0x0000
 .equ KERNEL_OFFSET_ADDR,0x1000
-.equ STACK_SEGMENT, 0x9000
-.equ STACK_POINTER, 0xfffe
-# more memory constants...
+.equ STACK_SEGMENT, 0x8900
+.equ STACK_POINTER, 0xf000
 
 # utility constants
 .equ DISK_READ,0x02
-
-test_string:
-	.string	"Test"
-
 
 .text               # Code segment
 .globl    _start    # The entry point must be global
@@ -33,20 +28,6 @@ test_string:
 
 _start:
 
-
-	 xchgw %bx, %bx
-
-	 xchgw %bx, %bx
-
-
-	call load_kernel
-# call setup_stack
-
-# 	call switch_to_kernel
-	
-	ret
-
-
 # Area reserved for createimage to write the OS size
 os_size:
 	.word   0
@@ -59,11 +40,19 @@ load_kernel:
 # Read sectors into memory
 # looks good so far
 	read:
+	xchgw %bx, %bx
+
 	movw $KERNEL_SEGMENT_ADDR, %ax
 	movw %ax, %es # Destination segment
+
+	# get os size
+	movw $BOOT_SEGMENT, %bx
+	shl $0x4, %bx
+	addw $os_size, %bx
+	movw (%bx), %ax
+
+	mov $DISK_READ,%ah # specify function
 	movw $KERNEL_OFFSET_ADDR, %bx # Destination address
-	mov $0x2,%ah # specify function
-	mov $0x9, %al # Number of sectors (can assume for now < 54)
 	mov $0x00, %ch # Starting cylinder number
 	mov $0x02, %cl # Starting sector number
 	mov $0x00, %dh # Starting head number
@@ -79,6 +68,9 @@ load_kernel:
 	jc read # If error, try again
 	or %ah, %ah
 	jnz read # If not successful, try again
+	movw 0x1000, %ax
+	or %ax, %ax
+	jz read # If not successful, try again
 
 	# Set registers
 	# Set data register
@@ -100,6 +92,8 @@ setup_stack:
 
 # switch control to kernel
 switch_to_kernel:
+movw $KERNEL_OFFSET_ADDR, %ax
+jmp *%ax
 	jmp	$KERNEL_SEGMENT_ADDR, $KERNEL_OFFSET_ADDR
 	ret	
 	

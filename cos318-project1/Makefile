@@ -51,7 +51,7 @@ createimage: createimage.o
 
 # Create an image to put on the floppy
 image: bootblock kernel
-	./createimage.given --extended ./bootblock ./kernel 
+	./createimage --extended ./bootblock ./kernel 
 
 # Put the image on the usb stick (these two stages are independent, as both
 # vmware and bochs can run using only the image file stored on the harddisk)	
