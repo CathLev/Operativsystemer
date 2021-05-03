@@ -14,7 +14,6 @@ int scheduler_count;
 
 void scheduler(void) {
     ++scheduler_count;
-    current_running = current_running->next;
 }
 
 void do_yield(void) {
@@ -30,5 +29,4 @@ void unblock(void) {
 }
 
 bool_t blocked_tasks(void) {
-    return TRUE;
 }

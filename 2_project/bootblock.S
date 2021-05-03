@@ -48,6 +48,7 @@ max_head:
     .byte   0x00
 after_global_variables:
     # Set up the stack using the same values as the 9200 BIOS uses
+    # xchg %bx, %bx
     movw    $0x0030, %ax
     movw    %ax, %ss
     movw    $0x0100, %sp

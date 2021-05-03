@@ -49,6 +49,7 @@ floppy.img: image
 all: floppy.img
 
 # Create a generic image to put on a boot medium
+# this was createimage bootblock kernel ..., but bootblock compiles to bootblock.o ?
 image: createimage bootblock kernel process1 process2 process3
 	./createimage --extended $(wordlist 2,$(words $^),$^)
 

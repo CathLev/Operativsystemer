@@ -139,8 +139,8 @@ static void write_segment(Elf32_Ehdr ehdr, Elf32_Phdr phdr, FILE * fp,
         if (*first == 1) {
             phyaddr = 0;
             *first = 0;
-        } else {
-            phyaddr = phdr.p_vaddr - OS_MEM_LOC + SECTOR_SIZE;
+        } else { // this was "- OS_MEM_LOC"
+            phyaddr = phdr.p_vaddr + OS_MEM_LOC + SECTOR_SIZE;
         }
         if (phyaddr < *nbytes) {
             error("memory conflict\n");

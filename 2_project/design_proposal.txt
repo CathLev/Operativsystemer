@@ -1,0 +1,48 @@
+DESIGN PROPOSAL PROJECT 2
+
+1. Process Control Block: What will be in your PCB and what will it be initialized to?
+
+The PCB will be an array of a fixed size. The size of the PCB will be the amount of concurrent processes supported. To start with, the size will be set to 8, but the size should not matter for the implementation as a full PCB will not be accounted for. One could account for a full PCB by checking how many processes are currently in the PCB, keeping track with a variable, and if processes are being added the processess adding the threads is considered blocked until a processes is finished.
+
+Each element of the array will be a struct with these fields, designed to save and enable restablishment of execution contexts:
+	PID <- Process ID, starting at 0 for "root" process and incrementing 1 per. 4 bytes 
+	Status <- signals the current status: "Running", "Ready", "Blocked". Integer, 0, 1, 2. Maybe just a byte.
+	eax <- registers, 4 bytes each
+	ebx <-
+	ecx <-
+	edx <-
+	esi <-
+	ebp <- base pointer just stored as another register, points to the base of this process' alloted stack
+	esp <- important to save this one correctly
+	eip <- this one can be tricky to save too
+	eflags <- this is also tricky to save
+	
+When setting up the PCB, we immediate fill in the first entry with the root process. The root has PID 0, initial status set to running, and saves the execution context of the kernel at the point when it starts scheduling. This is needed to be able to switch back and out and restore flags and registers after all tasks are done. 
+
+Question - Do I need to save more than esp and ebp to preserve the stack? I wouldn't assume so.
+Question - Should the first process be in the PCB? I think this is the right way to do it.
+
+2. Context Switching: How will you save and restore a task's context? Should anything special be done for the first task?
+
+The context switching starts by calling the context switch function from whichever function has been used to context switch (ie. yield, or block, or exit). It is implemented in assembly. 
+
+First, it saves the current context. The eflags are immediately saved upon entering the function. The PID and status fields are given as parameters, so they are read right off the stack. The registers eax, ebx, ecx, edx, esi, and ebp are similarly read right into the stack. The eip is found on the stack, as it was pushed there when the context switching was initialized (the correct position have to be found). The eflags are then finally pushed on the stack. After all the values are on the stack, the context switcher iterates through the PCB array (since this is done in assembly, it skips through the memory adresses by starting at the beginning of the array and jumping a number of bytes equal to the size of an element every time) and checks the PID field (which is the first 4 bytes). If the PID matches the one that it is saving the context switch from, it will start loading all the values from the stack into those memory adresses. After the context is saved, the function can safely return and the procedure continues to the scheduler to decide upon a new context.
+
+When a context is restored, a very similar operation happens but in reverse. The memory address of the correct element of the PCB can be readily supplied to the assembly code through a pointer. Then, the registers and flags are loaded into current registers and flags, making sure to store everything before the stack pointer is changed and making sure that eflags is second last and EIP is last to be changed, which will initiate the jump immediately to the new context.
+
+As long as the first context is always at the same place in memory, nothing special seems to be warranted?
+
+Question: Exactly where do we find the EIP value for when the program initialized the context switch?
+Question: Is it better to do this directly without a stack?
+Question: What needs to be done for the first process, the root kernel that schedules everything?
+
+3. Process: What, if any, are the differences between threads and processes and how they are handled?
+
+I will save threads on the PCB just like processes. The only "difference" will be that when threads are created, they are not allocated new stack space - they are instead sharing stack space with the process that created them.
+
+4, Mutual exclusion: What's your plan for implementing mutual exclusion?
+
+Using the solution from the book, with interested -> get the lock. This needs to be implemented in lock_aquire, so it waits to return until the lock is granted.
+
+5. Scheduling: Assuming that the threads below are put on the ready queue in order of their names and execution starts at Thread 1, how will execution unfold?
+

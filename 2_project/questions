@@ -1,0 +1,1 @@
+For make: why do we compile to bootblock.o, but supposedly use bootblock and not bootblock.o for createimage? Where does it even find "bootblock"? Why was it there? When I deleted it and "make -B", bootblock was not recreated, but it was apparently there when the project was downloaded. Why? Makes zero sense.
